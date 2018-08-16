@@ -1,0 +1,547 @@
+@import "../bourbon/bourbon";
+@import "settings";
+@import "foundation";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switch",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+// Global Variables
+$alt-header-color: #85242a;
+$alt-header-color-2: #2B558C;
+$author-text-color: #98a7ba;
+$blue-bar-base-color: #154887;
+$blue-bar-text-color: #ffffff;
+$body-grey-color: #636466;
+$footer-color: #636466;
+$glyph-color: #e3e3e3;
+$glyph-padding: 0 rem-calc(14px) 0 0;
+$glyph-size: rem-calc(40px);
+$main-menu-bg-color: #ffffff;
+$main-menu-hover-bg-color: #f5f5f5;
+$main-menu-topbar-height: rem-calc(30px);
+$main-menu-topbar-link-padding: $main-menu-topbar-height / 3;
+$more-link-margin: rem-calc(14px) 0;
+$sub-footer-bg-color: #98a7ba;
+$sub-footer-color: #5b6976;
+$sub-footer-link-color: #27384d;
+$sidebar-bg-color: #ededee;
+$sidebar-image-caption-color: grey;
+$sidebar-image-width: rem-calc(200px);
+
+@mixin selc-button {
+  // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+  $padding: rem-calc(8px);
+  // Primary color set in settings file. Default: $primary-color.
+  $bg: #2B558C;
+  // If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
+  $radius: rem-calc(2px);
+  // We can set $full-width:true to remove side padding extend width. Default:false
+  $full-width: false;
+  // We can set $disabled:true to create a disabled transparent button. Default:false
+  $disabled: false;
+  // $is-input - <input>'s and <button>'s take on strange padding. We added this to help fix that. Default:false
+  $is-input: false;
+
+  @include button($padding, $bg, $radius, $full-width, $disabled, $is-input);
+}
+
+@mixin horizontal-line {
+  border-bottom: $glyph-color rem-calc(5px) solid;
+}
+
+@mixin bar-on-top {
+  border-top: $glyph-color rem-calc(5px) solid;
+}
+
+@mixin research-views {
+  .views-row {
+    line-height: 1.25;
+    margin: {
+      bottom: rem-calc(18px);
+    }
+    .views-field-title {
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+}
+
+@mixin image-embed {
+  .field-collection-container {
+    border: none;
+    margin: 0;
+    .field-collection-view {
+      margin: 0;
+      padding: 0;
+      .field-collection-item-field-image-data {
+        color: $sidebar-image-caption-color;
+        .field-name-field-image-caption {
+          margin: rem-calc(12px) 0 rem-calc(6px);
+          p {
+            font-size: small;
+            line-height: 1.1;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $header-font-color;
+  font-weight: $header-font-weight;
+}
+
+h1 {
+  font-size: rem-calc(29px);
+}
+
+h2 {
+  font-size: rem-calc(24px);
+}
+
+.main-content-area h2 {
+  color: $alt-header-color;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: rem-calc(16px);
+}
+
+.main-content-area h3 {
+  color: $alt-header-color-2;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-style: italic;
+  a {
+    color: #0C9CDD;
+    text-decoration: underline;
+    &:hover {
+      color: scale-color($alt-header-color-2, $lightness: -14%);
+      text-decoration: none;
+    }
+  }
+}
+
+.sidebar h3 {
+  color: $alt-header-color;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h4 {
+  color: #282828;
+  font-size: rem-calc(16px);
+  font-weight: bold;
+}
+
+.tab-bar {
+  background: transparent;
+  .right-small {
+    border-left: none;
+  }
+}
+
+#header-area {
+  padding: {
+    top: rem-calc(20px);
+  }
+  .search-menu-area {
+    padding: {
+      bottom: rem-calc(24px);
+    }
+  }
+}
+
+#site-name-area {
+  h1 {
+    font-size: rem-calc(22px);
+    a {
+      color: $body-font-color;    
+    }
+  }
+  #logo {
+    img {
+      display: block;
+      padding-bottom: 1.25rem;
+      max-width: 98%;
+    }
+  }
+}
+
+#search-area {
+  height: rem-calc(37px);
+  .search-form {
+    margin: 0;
+    padding: 0 rem-calc(10px) 0 0;
+    text-align: right;
+    .form-item {
+      float: left;
+      margin: 0 0 0 47%;
+      max-width: 39%;
+      padding: 0;
+      width: 39%;
+      input {
+        margin: 0;
+        top: 0;
+        height: 2rem;
+      }
+    }
+    .form-actions {
+      float: left;
+      margin-left: 0.3rem;
+      input {
+        top: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+#menu-area {
+  .top-bar {
+    background-color: $main-menu-bg-color;
+    ul {
+      background-color: $main-menu-bg-color;
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        a {
+          background-color: $main-menu-bg-color;
+          color: $topbar-link-color;
+          text-transform: uppercase;
+          @include transition-property (all);
+          @include transition-duration (0.1s);
+          @include transition-timing-function(ease-in);
+          @include transition-delay(0);
+          &:after {
+            border-color: $topbar-link-color transparent transparent transparent;
+          }
+          &:hover {
+            background-color: $main-menu-hover-bg-color;
+          }
+          &.dropdown {
+            a {
+              background-color: $main-menu-bg-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#bar-area {
+  background-image: url(../images/grad-bar-2.jpg);
+  background-color: $blue-bar-base-color;
+  background-position: center 0;
+  background-repeat: repeat-y;
+  color: $blue-bar-text-color;
+  &>.row {
+    &.homepage {
+      padding: rem-calc(36px) 0 rem-calc(48px);
+      .hero-area {
+        h3 {
+          color: $blue-bar-text-color;
+          font-size: rem-calc(36px);
+          line-height: 1.1;
+        }
+      }
+    }
+    background-image: url(../images/grad-bg.png);
+    background-position: center 0;
+    background-repeat: repeat-y;
+    .logo-area img {
+      max-width: rem-calc(88px);
+    }
+    .slogan-area {
+      font-size: rem-calc(18px);
+      font-style: italic;
+      font-weight: 100;
+      margin-top: rem-calc(12px);
+      text-align: center;
+    }
+    .just-bar {
+      height: rem-calc(6px);
+    }
+  }
+}
+
+#body-area {
+  .row {
+    &>.columns {
+      padding-top: rem-calc(24px);
+      .region-homepage-right {
+        .block-views {
+          margin-bottom: rem-calc(36px);
+          .view-research {
+            @include research-views;
+          }
+          .view-display-id-why_licensure_block {
+            .views-row {
+              overflow: hidden;
+            }
+            .views-field-field-image {
+              float: left;
+            }
+            .views-field-title,
+            .views-field-field-author-name {
+              margin-left: rem-calc(140px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .main-content-area {
+    padding: {
+      bottom: rem-calc(36px);
+    }
+    .tabs {
+      margin: rem-calc(5px) rem-calc(5px) rem-calc(15px) !important;
+    }
+    .node-page {
+      big {
+        font-size: rem-calc(20px);
+        line-height: 1;
+      }
+    }
+    .node-research {
+      .content {
+        overflow: hidden;
+        .group-image {
+          float: right;
+          max-width: $sidebar-image-width;
+          width: 33%;
+          @include image-embed;
+          margin: {
+            left: rem-calc(12px);
+            bottom: rem-calc(6px);
+          }
+        }
+        .group-citations {
+          color: $author-text-color;
+          margin: {
+            bottom: rem-calc(12px);
+          }
+        }
+      }
+    }
+    .block-views {
+      @include bar-on-top;
+      padding-top: rem-calc(18px);
+      margin-top: rem-calc(18px);
+      .view-article {
+        @include research-views;
+      }
+      .view-research {
+        @include research-views;
+      }
+    }
+  }
+  .sidebar {
+    background-color: $sidebar-bg-color;
+    @include background-image(linear-gradient(#ededee, #ffffff));
+    &.homepage {
+      background-color: $sidebar-bg-color;
+      background-image: none;
+      min-height: rem-calc(500px);
+    }
+    ul.no-bullet {
+      li {
+        margin-left: 1rem;
+      }
+    }
+    .block {
+      @include horizontal-line;
+      margin-bottom: rem-calc(24px);
+      &:last-child {
+        border-bottom: none;
+      }
+      .share-block {
+        margin: $more-link-margin;
+        a {
+          padding: 0 rem-calc(8px) 0 0;
+        }
+        .share-title {
+          color: #636466;
+          font-size: rem-calc(16px);
+        }
+      }
+      @include image-embed;
+      &.block-nodeblock {
+        .field-collection-container {
+          width: 66%;
+          max-width: $sidebar-image-width;
+        }
+      }
+    }
+  }
+}
+
+#sub-footer-area {
+  background-color: $sub-footer-bg-color;
+  span {
+    display: block;
+  }
+  .row {
+    padding: {
+      top: rem-calc(48px);
+      bottom: rem-calc(48px);
+    }
+    .columns {
+      .container {
+        color: $sub-footer-color;
+        overflow: hidden;
+        .container-left {
+          float: left;
+          font-size: $glyph-size;
+          padding: $glyph-padding;
+        }
+        .container-right {
+          float: left;
+          padding-top: rem-calc(12px);
+          width: 80%;
+          div {
+            margin-bottom: rem-calc(12px);
+          }
+          a {
+            color: $sub-footer-link-color;
+            text-decoration: none;
+            &:hover, 
+            &:focus {
+              color: lighten($sub-footer-link-color, 20%);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer-area {
+  color: $footer-color;
+  padding: rem-calc(24px) 0;
+}
+
+// Events
+.view-events {
+  .views-row {
+    margin: 0 0 rem-calc(14px) 0;
+    padding: 0 0 rem-calc(20px) 0;
+    @include horizontal-line;
+    &.views-row-last {
+      border-bottom: none;
+      margin: 0 0 rem-calc(8px) 0;
+      padding: 0 0 0 0;
+    }
+    .events-container {
+      overflow: hidden;
+      .ec-left {
+        color: $glyph-color;
+        float: left;
+        font-size: $glyph-size;
+        padding: $glyph-padding;
+      }
+      .ec-right {
+        float: left;
+        padding-top: rem-calc(12px);
+        width: 80%;
+        .views-field {
+          line-height: 1.25;
+          &.views-field-title {
+            font-weight: bold;
+          }
+          &.views-field-field-event-type {
+            font-style: italic;
+          }
+          &.views-field-body {
+            margin-top: rem-calc(12px);
+            p {
+              line-height: 1.25;
+              color: $body-grey-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#webform-client-form-23 {
+  .form-item-submitted-name {
+    margin-bottom: 0;
+    .form-item {
+      margin: 0;
+      input {
+        margin-bottom: 0;
+      }
+      .description {
+        margin-top: rem-calc(6px);
+        color: lighten($body-grey-color, 30%);
+      }
+    }
+  }
+}
+
+// More Links
+.more-link {
+  overflow: hidden;
+  a {
+    float: left;
+    margin: $more-link-margin;
+  }
+}
+
+.selc-button {
+  @include selc-button;
+}
+
+.page-node-done {
+  .main-content-area {
+    #block-system-main {
+      .links {
+        display: none;
+      }
+    }
+  }
+}

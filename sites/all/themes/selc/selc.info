@@ -1,0 +1,23 @@
+name = SELC theme
+description = Responsive design created by Haydee Gusler and Dae Clarke, 2014
+core = 7.x
+engine = phptemplate
+
+regions[search_area] = Search Area
+regions[main_menu] = Main Menu
+regions[homepage_left] = Homepage Left Column
+regions[homepage_right] = Homepage Right Column
+regions[content] = Content
+regions[sidebar] = Sidebar
+regions[footer] = Footer
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = favicon
+features[] = main_menu
+
+stylesheets[all][] = stylesheets/app.css
+stylesheets[all][] = stylesheets/foundation-icons.css
+
+scripts[] = bower_components/modernizr/modernizr.js
