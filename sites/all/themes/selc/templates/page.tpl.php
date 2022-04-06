@@ -138,10 +138,9 @@
                 <div class="logos-slogan-area">
                   <div class="logos-area">
                     <div class="row">
-                      <div class="small-3 columns"><img src="/sites/all/themes/selc/images/logos/new/SEI-logo.png" alt="SEI"></div>
-                      <div class="small-3 columns"><img src="/sites/all/themes/selc/images/logos/new/NCSEA-logo2.png" alt="SEA"></div>
-                      <div class="small-3 columns"><img src="/sites/all/themes/selc/images/logos/new/SECB-logo.png" alt="SECB"></div>
-                      <div class="small-3 columns"><img src="/sites/all/themes/selc/images/logos/new/CASE-logo.png" alt="CASE"></div>
+                      <div class="small-4 columns"><img src="/sites/all/themes/selc/images/logos/new/SEI-logo.png" alt="SEI"></div>
+                      <div class="small-4 columns"><img src="/sites/all/themes/selc/images/logos/new/NCSEA-logo2.png" alt="SEA"></div>
+                      <div class="small-4 columns"><img src="/sites/all/themes/selc/images/logos/new/CASE-logo.png" alt="CASE"></div>
                     </div>
                   </div>
                   <div class="slogan-area">
@@ -216,7 +215,7 @@
                       <span>Organizations that make up SELC</span>  
                     </div>
                     <div>
-                      <span><a target="_blank" href="http://www.asce.org/SEI" title="The Structural Engineering Institute">SEI</a> | <a target="_blank" href="http://www.ncsea.com/" title="The National Council of Structural Engineers Associations">NCSEA</a> | <a target="_blank" href="http://www.secb.org/" title="The Structural Engineering Certification Board">SECB</a> | <a target="_blank" href="http://www.acec.org/case/" title="The Council of American Structure Engineers">CASE</a></span>
+                      <span><a target="_blank" href="http://www.asce.org/SEI" title="The Structural Engineering Institute">SEI</a> | <a target="_blank" href="http://www.ncsea.com/" title="The National Council of Structural Engineers Associations">NCSEA</a> | <a target="_blank" href="http://www.acec.org/case/" title="The Council of American Structure Engineers">CASE</a></span>
                     </div>
                   </div>
                 </div>
